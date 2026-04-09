@@ -30,7 +30,7 @@ jobs:
       - name: Buscar binario generado
         run: find . -type f -name "ArmorPaint" | head -20
 
-            - name: Subir binario como artefacto descargable
+      - name: Subir binario como artefacto descargable
         uses: actions/upload-artifact@v4
         with:
           name: ArmorPaint-Linux
