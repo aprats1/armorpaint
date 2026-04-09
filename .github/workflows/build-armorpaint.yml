@@ -35,14 +35,13 @@ jobs:
             libxrandr-dev libxcursor-dev \
             mesa-vulkan-drivers
 
-      - name: Compilar
-        working-directory: paint
-        run: ../base/make --compiler clang --compile
+      - name: Buscar binario generado
+        run: find paint -type f -name "ArmorPaint" -o -name "*.bin" | head -20
 
       - name: Subir binario como artefacto descargable
         uses: actions/upload-artifact@v4
         with:
           name: ArmorPaint-Linux
-          path: paint/build/krom/
+          path: paint/Deployment/
           retention-days: 7
           if-no-files-found: warn
